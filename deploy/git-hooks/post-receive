@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# The production directory
+WORKDIR="/home/pi/televerket-python"
+
+# The Git repo
+GIT="/home/pi/televerket-python.git"
+
+# The env file
+ENV="/home/pi/televerket-python/.env"
+
+# Deploy the content
+git --work-tree=$WORKDIR --git-dir=$GIT checkout -f
+
+# Do stuff like starting the project
+cd $WORKDIR || exit
