@@ -12,8 +12,7 @@ fields = {
         'voice_start': '{}'
     }
 
-print(fields)
-print(auth)
+print('Started')
 
 def button_pressed():
     print('PRESSED')
