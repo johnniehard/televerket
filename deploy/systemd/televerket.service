@@ -1,0 +1,10 @@
+[Unit]
+Description=Phone finder button
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 -u main.py
+WorkingDirectory=/home/pi/televerket-python
+
+[Install]
+WantedBy=multi-user.target
