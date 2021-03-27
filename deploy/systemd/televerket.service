@@ -3,6 +3,7 @@ Description=Phone finder button
 After=network.target
 
 [Service]
+EnvironmentFile=/home/pi/televerket-python/.env
 ExecStart=/usr/bin/python3 -u main.py
 WorkingDirectory=/home/pi/televerket-python
 
