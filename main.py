@@ -13,6 +13,7 @@ fields = {
     }
 
 print('Started')
+print(os.environ['GIT_REV'])
 
 def button_pressed():
     print('PRESSED')
