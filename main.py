@@ -2,6 +2,10 @@ from gpiozero import Button
 import requests
 import os
 
+git_rev = None
+with open('git_rev', 'r') as f:
+    git_rev = f.read()
+
 state = 'IDLE'
 
 auth = (os.environ['CALL_API_USERNAME'], os.environ['CALL_API_PASSWORD'])
@@ -13,7 +17,7 @@ fields = {
     }
 
 print('Started')
-print(os.environ['GIT_REV'])
+print(git_rev)
 
 def button_pressed():
     print('PRESSED')
