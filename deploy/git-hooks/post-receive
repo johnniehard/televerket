@@ -8,7 +8,7 @@ GIT="/home/pi/televerket-python.git"
 
 # Deploy the content
 git --work-tree=$WORKDIR --git-dir=$GIT checkout -f
-git --git-dir=$GIT rev-parse --short HEAD > $HOME/git_rev
+git --git-dir=$GIT rev-parse --short HEAD > $WORKDIR/git_rev
 
 # Do stuff like starting the project
 cd $WORKDIR || exit
