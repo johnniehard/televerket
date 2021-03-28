@@ -6,9 +6,6 @@ WORKDIR="/home/pi/televerket-python"
 # The Git repo
 GIT="/home/pi/televerket-python.git"
 
-# The env file
-ENV="/home/pi/televerket-python/.env"
-
 # Deploy the content
 git --work-tree=$WORKDIR --git-dir=$GIT checkout -f
 export GIT_REV=`git --git-dir=$GIT rev-parse --short HEAD`
