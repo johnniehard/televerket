@@ -16,8 +16,19 @@ fields = {
         'voice_start': '{}'
     }
 
+def send_sms(message):
+    sms = {
+        'from': os.environ['CALLER_NUMBER'],
+        'to': os.environ['TARGET_NUMBER'],
+        'message': message,
+    }
+
+    response = requests.post("https://api.46elks.com/a1/sms", data=sms, auth=auth)
+    print("SENT SMS:", response.content)
+
 print('Started')
 print(git_rev)
+send_sms(f'Televerket: {git_rev}')
 
 def button_pressed():
     print('PRESSED')
@@ -25,7 +36,6 @@ def button_pressed():
     response = requests.post("https://api.46elks.com/a1/calls", data=fields, auth=auth)
     print(response.content)
     state = 'IDLE'
-
 
 button = Button(21)
 button.when_pressed = button_pressed
